@@ -1,0 +1,4 @@
+El nombre de la carpeta [id] está entre corchetes para que sea una ruta dinamica 
+que cambia con con cada id de cada post 
+
+Ese id se puede pasar a la pagina por params "const { id } = params;"

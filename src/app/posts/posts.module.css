@@ -1,0 +1,8 @@
+.post {
+  width: 70%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(75, 151, 172);
+  background: rgb(var(--tile-start-rgb));
+}
