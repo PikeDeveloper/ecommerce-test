@@ -10,13 +10,12 @@ export default function AddedToCart(product) {
   const handleClick = () => {
     product.quantity = quantity;
     addProduct(product);
-    console.log(products);
+    
   };
 
   const handleInput = (e) => {
     quantity = e.target.value;
-    console.log("cantidad:");
-    console.log(quantity);
+   
   };
 
   return (
