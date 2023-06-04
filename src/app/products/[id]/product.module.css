@@ -1,0 +1,36 @@
+.container {
+  width: 90%;
+  height: 500px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+
+  background: white;
+}
+
+.image_and_descrption {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  margin: auto;
+}
+
+.text {
+  margin: 20px 30px 50px 50px;
+}
+.tittle {
+  margin: 20px;
+}
+
+.link {
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .post {
+    width: 90%;
+  }
+}

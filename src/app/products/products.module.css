@@ -1,0 +1,55 @@
+.mainContainer {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+ 
+  background: white;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.image_and_descrption {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  margin: auto;
+}
+
+.text {
+  margin: 20px;
+}
+.tittle {
+  margin: 20px;
+  font-size: 18px;
+}
+
+.like{
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 20px;
+}
+
+.like_and_add_to_cart{
+  display: flex;
+  flex-direction: row;
+   text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+
+ 
+}
