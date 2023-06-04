@@ -1,4 +1,4 @@
-import ShoppingCart from "@/shared_components/shopping_cart/ShoppingCart";
+import ShoppingCart from "@/components/shopping_cart/ShoppingCart";
 
 
 export default function PostLayout({ children }) {

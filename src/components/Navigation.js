@@ -1,5 +1,5 @@
+// Este es el menu de navegacion entre paginas, el menu superior
 import Link from "next/link";
-
 import styles from "./Navigation.module.css";
 
 //Links de navegacion entre paginas

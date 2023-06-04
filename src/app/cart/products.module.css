@@ -6,6 +6,8 @@
 }
 
 .product {
+  display: flex;
+  flex-wrap: wrap;
   width: 300px;
   height: 350px;
   margin: 20px;
@@ -32,13 +34,17 @@
   margin: 20px;
 }
 .title {
-  
   font-size: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+
+.price {
+  font-size: 16px;
+  color: #4a5568;
 }
 
 .like {
@@ -54,4 +60,33 @@
   align-items: center;
   justify-content: center;
   justify-content: space-between;
+}
+
+.button {
+  cursor: pointer;
+  background-color: yellow;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  color: rgb(93, 93, 93);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  user-select: none;
+  margin: 0 auto 150px auto;
+}
+.empty {
+  text-align: center;
+  color: #4a5568;
+  font-size: 20px;
+}
+
+.delete {
+  margin: auto;
+  cursor: pointer;
+  color: red;
+  user-select: none;
 }

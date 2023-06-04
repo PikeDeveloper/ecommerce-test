@@ -1,9 +1,14 @@
+"use client";
 import styles from "./shoppingCart.module.css";
 import Image from "next/image";
 import cart from "./shopping-cart.png";
 import Link from "next/link";
 
-export default function ShoppingCart(  ) {
+import { useProducts } from "../../context/ProductsContext";
+
+export default function ShoppingCart() {
+
+  const products = useProducts();
   return (
     <div className={styles.item_cart_counter}>
       <Link href="/cart">
@@ -14,7 +19,9 @@ export default function ShoppingCart(  ) {
           height={50}
           className={styles.image}
         />
-        <h3 className={styles.number}>0</h3>
+        <h3 className={styles.number}>{ 
+          products.products.length > 0 ? products.products.length : 0
+         }</h3>
       </Link>
     </div>
   );

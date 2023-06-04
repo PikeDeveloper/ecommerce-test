@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { LikeButton } from "./LikeButton";
 import styles from "./products.module.css";
-import StarRating from "@/shared_components/stars_rating/stars";
-import AddToCart from "@/shared_components/add_to_cart/AddToCart";
+import StarRating from "@/components/stars_rating/stars";
+import AddToCart from "@/components/add_to_cart/AddToCart";
 
 const fecthPosts = () => {
   //next: {revalidate: 10,} es para revisar cada 60 segundos si hay cambios en la api
@@ -19,23 +19,29 @@ export async function ListOfProducts() {
   return posts.slice(0, 10).map((post) => (
     <div className={styles.product}>
       <Link href={`/products/${post.id}`} className={styles.link}>
-      
-      <div className={styles.image_and_descrption}>
-        <img width={100} height={100}  src={post.image} alt={post.title} className={styles.image}  />
-        <div className={styles.text} >
-          <h3 className= {styles.title}  >{post.title}</h3>
-          <StarRating stars={post.rating.rate} /> 
-          <p>{post.price}$</p>
-        
-        
-      </div>
-    </div>
+        <div className={styles.image_and_descrption}>
+          <img
+            width={100}
+            height={100}
+            src={post.image}
+            alt={post.title}
+            className={styles.image}
+          />
+          <div className={styles.text}>
+            <h4 className={styles.title}>{post.title}</h4>
+            <StarRating stars=
+            {post.rating.rate} count={post.rating.count}
+             />
+            <p>{post.price}$</p>
+          </div>
+        </div>
       </Link>
       <div className={styles.like_and_add_to_cart}>
-      <LikeButton />
-      <AddToCart />
-        </div>
-   
+        <LikeButton />
+        <AddToCart 
+        product={post}
+         />
+      </div>
     </div>
   ));
 }

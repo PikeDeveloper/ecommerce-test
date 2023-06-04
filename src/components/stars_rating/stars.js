@@ -1,6 +1,6 @@
 import "./stars.css";
 
-export default function StarRating({ stars }) {
+export default function StarRating({ stars, count }) {
   // Máxima cantidad de estrellas
   const maxStars = 5;
 
@@ -19,8 +19,11 @@ export default function StarRating({ stars }) {
   };
 
   return (
-    <div className="stars-gray">
-      <div className="stars-yellow" style={StarStyles()}></div>
+    <div className="stars-and-count" >
+      <div className="stars-gray">
+        <div className="stars-yellow" style={StarStyles()}></div>
+      </div>
+      <p className="count" >{count}</p>
     </div>
   );
 }
