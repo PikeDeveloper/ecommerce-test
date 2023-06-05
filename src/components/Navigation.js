@@ -5,8 +5,8 @@ import styles from "./Navigation.module.css";
 //Links de navegacion entre paginas
 const links = [
   { label: "Home", route: "/" },
-  { label: "About", route: "/about" },
   { label: "Products", route: "/products" },
+  { label: "Login", route: "/login" },
 ];
 
 export default function Navigation() {
