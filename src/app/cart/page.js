@@ -4,6 +4,7 @@ import styles from "./products.module.css";
 import Link from "next/link";
 import cart from "./carritoVacio.png";
 import Image from "next/image";
+import GoShoppingButton from "@/components/go_shopping_button/GoShoppingButton";
 
 export default function ShoppingCart() {
   const { products, deleteProduct } = useProducts();
@@ -19,9 +20,7 @@ export default function ShoppingCart() {
           height={300}
           className={styles.image}
         />
-        <Link href="/products">
-          <div className={styles.button}>Ir a la tienda</div>
-        </Link>
+        <GoShoppingButton />
       </div>
     );
   }

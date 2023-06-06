@@ -16,7 +16,27 @@ export const useProducts = () => {
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
 
-  const addProduct = (product) => setProducts([...products, product]);
+  // const addProduct = (product) => setProducts([...products, product]);
+
+  const addProduct = (newProduct) => {
+    const productInCart = products.find(
+      (product) => product.product.id === newProduct.product.id
+    );
+    if (productInCart) {
+      const newProducts = products.map((product) => {
+        if (product.product.id === newProduct.product.id) {
+          return {
+            ...product,
+            quantity: Number(product.quantity) + Number(newProduct.quantity),
+          };
+        }
+        return product;
+      });
+      setProducts(newProducts);
+    } else {
+      setProducts([...products, newProduct]);
+    }
+  };
 
   const deleteProduct = (id) => {
     const newProducts = products.filter((product) => product.product.id !== id);

@@ -16,7 +16,7 @@ const fecthPosts = () => {
 export async function ListOfProducts() {
   const posts = await fecthPosts();
 
-  return posts.slice(0, 10).map((post) => (
+  return posts.slice(0, 19).map((post) => (
     <div className={styles.product}>
       <Link href={`/products/${post.id}`} className={styles.link}>
         <div className={styles.image_and_descrption}>

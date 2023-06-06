@@ -3,7 +3,7 @@
 import styles from "./AddToCart.module.css";
 import { useProducts } from "../../context/ProductsContext";
 
-export default function AddedToCart(product) {
+export default function AddToCart(product) {
   const { products, addProduct } = useProducts();
   let quantity = 1;
 
