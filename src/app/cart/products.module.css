@@ -1,16 +1,25 @@
 .mainContainer {
-  margin: 0 auto;
+  margin: 0 auto 0 20px;
   width: 90%;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.ListOfPtoducts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto 0 20px;
 }
 
 .product {
+  border: 1px solid #e2e8f0;
   display: flex;
-  flex-wrap: wrap;
-  width: 300px;
-  height: 350px;
-  margin: 20px;
+  flex-direction: row;
+  width: 600px;
+  height: 150px;
+  margin: 10px;
   padding: 10px;
   border-radius: 10px;
   background: white;
@@ -18,20 +27,20 @@
 
 .link {
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
 }
 
-.image_and_descrption {
-  margin: auto;
+.descrption {
+  margin: 0px auto 0px 20px;
   display: flex;
   flex-direction: column;
 }
 
-.image {
-  margin: auto;
-}
+
 
 .text {
-  margin: 20px;
+  margin: 0px auto;
 }
 .title {
   font-size: 18px;
@@ -43,6 +52,7 @@
 }
 
 .price {
+  margin: 0px;
   font-size: 16px;
   color: #4a5568;
 }
@@ -85,7 +95,9 @@
 }
 
 .delete {
-  margin: auto;
+  height: 20px;
+
+  margin: 5px 5px 0 auto;
   cursor: pointer;
   color: red;
   user-select: none;
@@ -100,4 +112,16 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.total {
+  padding: 20px;
+  font-size:18px;
+  position: fixed;
+  right: 70px;
+  top: 100px;
+  text-align: right;
+  border: 1px solid #4e4d6720;  
+  border-radius: 10px;
+
 }
