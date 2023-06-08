@@ -15,7 +15,7 @@ export const useProducts = () => {
 
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("All");
 
   // const addProduct = (product) => setProducts([...products, product]);
 

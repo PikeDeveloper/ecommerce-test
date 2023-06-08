@@ -1,6 +1,5 @@
 "use client";
 
-
 import styles from "./AddToCart.module.css";
 import { useProducts } from "../../context/ProductsContext";
 
@@ -9,6 +8,7 @@ export default function AddToCart(product) {
   let quantity = 1;
 
   const handleClick = () => {
+ 
     product.quantity = quantity;
     addProduct(product);
   };
