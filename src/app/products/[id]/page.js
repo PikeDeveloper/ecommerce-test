@@ -14,22 +14,23 @@ export default async function Post({ params }) {
   return (
     <div className={styles.container}>
       <div className={styles.image_and_descrption}>
-        <img width={300} height={300}  src={post.image} alt={post.title} className={styles.image}  />
-        <div className={styles.text} >
-          <h3 className= {styles.title}  >{post.title}</h3>
-          <StarRating stars=
-            {post.rating.rate} count={post.rating.count}
-             />
+        <img
+          width={300}
+          height={300}
+          src={post.image}
+          alt={post.title}
+          className={styles.image}
+        />
+        <div className={styles.text}>
+          <h3 className={styles.title}>{post.title}</h3>
+          <StarRating stars={post.rating.rate} count={post.rating.count} />
           <p>{post.price}$</p>
           <p>{post.description}</p>
           <br />
           <br />
-          
-          <AddedToCart 
-          product={post}
-          />
+
+          <AddedToCart product={post} />
         </div>
-        
       </div>
     </div>
   );

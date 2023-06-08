@@ -1,0 +1,12 @@
+.container {
+  width: 150px;
+  margin: 30px;
+}
+
+.checkbox{
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+  font-size: 14px;
+  user-select: none;
+}
