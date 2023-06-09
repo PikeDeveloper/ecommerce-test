@@ -1,16 +1,44 @@
 "use client";
 import styles from "./login.module.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import Login from "./login";
+export default function Login() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit");
+  };
 
-export default function AboutPage() {
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
-    <GoogleOAuthProvider clientId="579572444628-nak0v6sq3ocqmb4g6r2ff5r607mpc6qt.apps.googleusercontent.com">
-      <main>
-        <div className={styles.googleLogin} >
-          <Login />
+    <div className={styles.mainContainer}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        {/* <p className="tittle">Iniciar sesión</p> */}
+        <label className={styles.tittle}> Iniciar sesión</label>
+        <label className={styles.inputName} htmlFor="email">
+          Correo
+        </label>
+        <input
+          className={styles.input}
+          type="email"
+          name="email"
+          placeholder="correo@ejemplo.com"
+          onChange={handleChange}
+        />
+        <label className={styles.inputName} htmlFor="Password">
+          Contraseña
+        </label>
+        <input
+          className={styles.input}
+          type="pasword"
+          name="password"
+          placeholder="Contraseña"
+          onChange={handleChange}
+        />
+        <div className="login-and-no-acount">
+          <button className={styles.loginButton}>Login</button>
         </div>
-      </main>
-    </GoogleOAuthProvider>
+      </form>
+    </div>
   );
 }
