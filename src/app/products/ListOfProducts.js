@@ -21,7 +21,7 @@ export function ListOfProducts() {
     si allProducts tiene productos, entonces muestra la lista de productos
     */
 
-    <div className={styles.container}>
+    <div className={styles.mainContainer}>
       {allProducts ? (
         allProducts.length > 0 ? (
           allProducts.map((product) => (

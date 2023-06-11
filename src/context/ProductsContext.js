@@ -26,14 +26,13 @@ export function ProductsProvider({ children }) {
       .then((data) => setProducts(data));
   };
 
-  const addProduct = (newProduct) => {
-    const productInCart = productsInCart.find(
-      (product) => product.product.id === newProduct.product.id
-    );
+  const addProductToCart = (newProduct) => {
 
-    if (productInCart) {
+    let result = productsInCart.some(Element => Element.product.id === newProduct.product.id)
+
+    if (result) {
       const newProducts = productsInCart.map((product) => {
-        if (productsInCart.product.id === newProduct.product.id) {
+        if (product.product.id === newProduct.product.id) {
           return {
             ...product,
             quantity: Number(product.quantity) + Number(newProduct.quantity),
@@ -60,7 +59,7 @@ export function ProductsProvider({ children }) {
         category,
         setCategory,
         getProducts,
-        addProduct,
+        addProductToCart,
         deleteProductInCart,
       }}
     >

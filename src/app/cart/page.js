@@ -20,9 +20,9 @@ export default function ShoppingCart() {
 
       <div className={styles.mainContainer}>
         <div className={styles.ListOfPtoducts}>
-          {products.map((product) => {
+          {productsInCart.map((product, index) => {
             return (
-              <div className={styles.product}>
+              <div className={styles.product} key={index}>
                 <Link
                   href={`/products/${product.product.id}`}
                   className={styles.link}
@@ -40,7 +40,7 @@ export default function ShoppingCart() {
             );
           })}
         </div>
-        <Total products={products} />
+        <Total products={productsInCart} />
       </div>
     </div>
   );

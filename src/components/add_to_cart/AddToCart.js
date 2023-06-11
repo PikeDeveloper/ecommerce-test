@@ -4,14 +4,18 @@ import styles from "./AddToCart.module.css";
 import { useProducts } from "../../context/ProductsContext";
 import { useState } from "react";
 
-export default function AddToCart(product) {
-  const { addProduct } = useProducts();
+export default function AddToCart({ product }) {
+  const { addProductToCart } = useProducts();
 
   const [quantity, setQuantity] = useState(1);
 
   const handleClick = () => {
-    product.quantity = quantity;
-    addProduct(product);
+    let productToCart = {
+      product: product,
+      quantity: quantity
+    }
+
+    addProductToCart(productToCart);
   };
 
   const handleInput = (e) => {

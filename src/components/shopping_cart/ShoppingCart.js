@@ -8,7 +8,7 @@ import { useProducts } from "../../context/ProductsContext";
 
 export default function ShoppingCart() {
 
-  const productsInCart = useProducts();
+  const {productsInCart} = useProducts();
   return (
     <div className={styles.item_cart_counter}>
       <Link href="/cart">
