@@ -1,12 +1,22 @@
 .container {
   width: 150px;
   margin: 30px;
+  display: flex;
+  flex-direction: column;
+
+  
 }
 
-.checkbox{
-  width: 15px;
-  height: 15px;
-  margin: 10px;
-  font-size: 14px;
-  user-select: none;
+.price {
+  margin: 5px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  color: rgb(95, 95, 95);
+  background-color: transparent;
+  text-align: left;
+}
+
+.price:hover {
+  color: rgb(0, 0, 0);
 }
