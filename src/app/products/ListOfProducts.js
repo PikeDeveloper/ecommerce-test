@@ -9,7 +9,7 @@ import SquareImage from "@/components/square_image/SquareImage";
 import { useEffect } from "react";
 
 export function ListOfProducts() {
-  const { filteredProducts } = useProducts();
+  const { filteredProducts, filterProducts } = useProducts();
 
   return (
     /*
@@ -41,7 +41,12 @@ export function ListOfProducts() {
             </div>
           ))
         ) : (
-          <p>No hay productos</p>
+          /* Este boton que no se ve es para que se actualice el
+          filtro y que pueda mostrar los productos */
+          <div>
+            <p>No hay productos</p>
+            <button onClick={filterProducts()}></button>
+          </div>
         )
       ) : (
         <p>Cargando...</p>

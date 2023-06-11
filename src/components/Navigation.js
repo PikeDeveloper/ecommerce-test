@@ -1,6 +1,7 @@
 // Este es el menu de navegacion entre paginas, el menu superior
 import Link from "next/link";
 import styles from "./Navigation.module.css";
+import ShoppingCart from "./shopping_cart/ShoppingCart";
 
 //Links de navegacion entre paginas
 const links = [
@@ -19,6 +20,7 @@ export default function Navigation() {
           ))}
         </ul>
       </nav>
+      <ShoppingCart />
     </header>
   );
 }

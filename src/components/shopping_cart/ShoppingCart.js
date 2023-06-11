@@ -16,8 +16,9 @@ export default function ShoppingCart() {
           src={cart}
           alt="cart"
           width={50}
-          height={50}
+          height={40}
           className={styles.image}
+          
         />
          <h3 className={styles.number}>{ 
           productsInCart.length > 0 ? productsInCart.length : 0

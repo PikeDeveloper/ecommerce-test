@@ -1,18 +1,22 @@
 .item_cart_counter {
   cursor: pointer;
-  width: 50px;
-  height: 50px;
   margin-right: 50px;
   margin-left: auto;
+  margin-top: -30px;
+  width: 50px;
+  height: 50px;
 }
 
 .number {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: blue;
+  color: rgb(240, 136, 4);
 }
 
 .image {
   position: absolute;
+  margin-top: 5px;
+  display: flex;
+  
 }

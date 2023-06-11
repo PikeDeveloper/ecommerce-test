@@ -7,8 +7,8 @@ export default function Filter(product) {
   const {
     setCategory,
     filterProducts,
-    minPrice,
-    maxPrice,
+    category,
+
     setMinPrice,
     setMaxPrice,
   } = useProducts();
@@ -28,8 +28,8 @@ export default function Filter(product) {
 
   const priceSelecter = (e) => {
     const price = e.target.name.split("-");
-    setMinPrice((pr) => price[0] - (pr * 0));
-    setMaxPrice((pr) => price[1] - (pr * 0));
+    setMinPrice((pr) => price[0] - pr * 0);
+    setMaxPrice((pr) => price[1] - pr * 0);
     filterProducts();
     console.log("cambio de precio " + price[0] + "-" + price[1]);
   };
