@@ -5,13 +5,12 @@ export default function Total({ products }) {
   let total = 0;
   return (
     <div className={styles.total}>
-      
       {products.map((product) => {
         total += product.product.price * product.quantity;
         return <p>{product.product.price * product.quantity} USD</p>;
       })}
 
-      <h4>Total {total} USD </h4>
+      <h4>Total {total.toFixed(2)} USD </h4>
       <GoShoppingButton />
     </div>
   );

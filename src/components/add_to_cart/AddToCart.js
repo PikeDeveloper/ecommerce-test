@@ -12,22 +12,24 @@ export default function AddToCart({ product }) {
   const handleClick = () => {
     let productToCart = {
       product: product,
-      quantity: quantity
-    }
+      quantity: quantity,
+    };
 
     addProductToCart(productToCart);
   };
 
   const handleInput = (e) => {
-    setQuantity(e.target.value)
+    setQuantity(e.target.value);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.input}>
         <p>Cantidad:</p>
+
         <input
           type="number"
+          min="1"
           className={styles.number}
           placeholder="1"
           onChange={handleInput}
