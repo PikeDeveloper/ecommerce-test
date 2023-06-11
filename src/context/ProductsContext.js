@@ -14,19 +14,19 @@ export const useProducts = () => {
 };
 
 export function ProductsProvider({ children }) {
-  const [allProducts, setAllProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([])
+  const [allProducts, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const [productsInCart, setProductsInCart] = useState([]);
   const [category, setCategory] = useState("All");
 
   const getProducts = async () => {
-    await fetch('https://fakestoreapi.com/products/')
-      .then(response => response.json()).then(data => setAllProducts(data));
-  }
+    await fetch("https://fakestoreapi.com/products/")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  };
 
   const addProduct = (newProduct) => {
-
     const productInCart = productsInCart.find(
       (product) => product.product.id === newProduct.product.id
     );
@@ -54,7 +54,15 @@ export function ProductsProvider({ children }) {
 
   return (
     <ProductsContext.Provider
-      value={{ allProducts, productsInCart, category, setCategory, getProducts, addProduct, deleteProduct }}
+      value={{
+        allProducts,
+        productsInCart,
+        category,
+        setCategory,
+        getProducts,
+        addProduct,
+        deleteProduct,
+      }}
     >
       {children}
     </ProductsContext.Provider>
