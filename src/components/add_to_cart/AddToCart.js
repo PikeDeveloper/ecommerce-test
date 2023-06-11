@@ -2,10 +2,12 @@
 
 import styles from "./AddToCart.module.css";
 import { useProducts } from "../../context/ProductsContext";
+import { useState } from "react";
 
 export default function AddToCart(product) {
   const { addProduct } = useProducts();
-  let quantity = 1;
+
+  const [quantity, setQuantity] = useState(1);
 
   const handleClick = () => {
     product.quantity = quantity;
@@ -13,7 +15,7 @@ export default function AddToCart(product) {
   };
 
   const handleInput = (e) => {
-    quantity = e.target.value;
+    setQuantity(e.target.value)
   };
 
   return (

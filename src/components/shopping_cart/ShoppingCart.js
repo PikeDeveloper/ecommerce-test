@@ -19,9 +19,9 @@ export default function ShoppingCart() {
           height={50}
           className={styles.image}
         />
-        <h3 className={styles.number}>{ 
+        {/* <h3 className={styles.number}>{ 
           products.products.length > 0 ? products.products.length : 0
-         }</h3>
+         }</h3> */}
       </Link>
     </div>
   );

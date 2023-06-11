@@ -14,10 +14,8 @@ export default function Navigation() {
     <header className={styles.header}>
       <nav>
         <ul className={styles.nav}>
-          {links.map(({ label, route }) => (
-            <div className={styles.item}>
-              <Link href={route}>{label}</Link>
-            </div>
+          {links.map(({ label, route }, index) => (
+            <Link key={index} className={styles.item} href={route}>{label}</Link>
           ))}
         </ul>
       </nav>

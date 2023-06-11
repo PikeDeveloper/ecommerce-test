@@ -1,5 +1,5 @@
-import { ListOfProducts } from "./ListOfProducts";
 
+import { ListOfProducts } from "./ListOfProducts";
 import styles from "./products.module.css";
 
 export default function PostsPage() {
