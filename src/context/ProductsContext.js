@@ -47,9 +47,9 @@ export function ProductsProvider({ children }) {
     }
   };
 
-  const deleteProduct = (id) => {
+  const deleteProductInCart = (id) => {
     const newProducts = products.filter((product) => product.product.id !== id);
-    setProducts(newProducts);
+    setProductsInCart(newProducts);
   };
 
   return (
@@ -61,7 +61,7 @@ export function ProductsProvider({ children }) {
         setCategory,
         getProducts,
         addProduct,
-        deleteProduct,
+        deleteProductInCart,
       }}
     >
       {children}

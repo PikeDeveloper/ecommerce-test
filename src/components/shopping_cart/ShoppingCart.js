@@ -8,7 +8,7 @@ import { useProducts } from "../../context/ProductsContext";
 
 export default function ShoppingCart() {
 
-  const products = useProducts();
+  const productsInCart = useProducts();
   return (
     <div className={styles.item_cart_counter}>
       <Link href="/cart">
@@ -19,9 +19,9 @@ export default function ShoppingCart() {
           height={50}
           className={styles.image}
         />
-        {/* <h3 className={styles.number}>{ 
-          products.products.length > 0 ? products.products.length : 0
-         }</h3> */}
+         <h3 className={styles.number}>{ 
+          productsInCart.length > 0 ? productsInCart.length : 0
+         }</h3> 
       </Link>
     </div>
   );

@@ -8,9 +8,9 @@ import Total from "./Total";
 import EmptyCart from "./EmptyCart";
 
 export default function ShoppingCart() {
-  const { products, deleteProduct } = useProducts();
+  const { productsInCart, deleteProductInCart } = useProducts();
 
-  if (products.length === 0) {
+  if (productsInCart.length === 0) {
     return <EmptyCart />;
   }
 
@@ -32,7 +32,7 @@ export default function ShoppingCart() {
                 </Link>
                 <div
                   className={styles.delete}
-                  onClick={() => deleteProduct(product.product.id)}
+                  onClick={() => deleteProductInCart(product.product.id)}
                 >
                   Eliminar
                 </div>
