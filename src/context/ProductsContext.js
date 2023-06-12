@@ -2,6 +2,8 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
+import { apiii } from "../utils/constants.js";
+
 export const ProductsContext = createContext();
 
 export const useProducts = () => {
@@ -12,6 +14,7 @@ export const useProducts = () => {
     );
   return constext;
 };
+
 
 export function ProductsProvider({ children }) {
   const [allProducts, setAllProducts] = useState([]);
@@ -24,11 +27,12 @@ export function ProductsProvider({ children }) {
 
   //obtiene todos los productos de la api
   const getProducts = async () => {
-    await fetch("https://fakestoreapi.com/products/")
+    console.log(" api pedida ");
+    console.log(apiii);
+    await fetch(apiii)
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
 
-    console.log("hizo fetch");
     setMinPrice((pre) => pre * 0);
     filterProducts();
   };

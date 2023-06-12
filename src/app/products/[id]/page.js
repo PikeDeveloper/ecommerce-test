@@ -1,9 +1,10 @@
 import StarRating from "@/components/stars_rating/stars";
 import styles from "./product.module.css";
 import AddedToCart from "@/components/add_to_cart/AddToCart";
+import { apiii } from "../../../utils/constants.js";
 
 const fetchSinglePost = (id) => {
-  return fetch(`https://fakestoreapi.com/products/${id}`, {
+  return fetch(`${apiii}${id}`, {
     next: { revalidate: 60 },
   }).then((res) => res.json());
 };

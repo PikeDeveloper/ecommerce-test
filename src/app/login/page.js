@@ -1,5 +1,7 @@
 "use client";
 import styles from "./login.module.css";
+
+import LoginGoogle from "./loginGoogle";
 export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ export default function Login() {
           <button className={styles.loginButton}>Login</button>
         </div>
       </form>
+      <LoginGoogle />
     </div>
   );
 }

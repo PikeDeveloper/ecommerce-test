@@ -6,7 +6,7 @@ import Link from "next/link";
 import { LikeButton } from "./LikeButton";
 import styles from "./products.module.css";
 import SquareImage from "@/components/square_image/SquareImage";
-import { useEffect } from "react";
+
 
 export function ListOfProducts() {
   const { filteredProducts, filterProducts } = useProducts();
@@ -22,7 +22,7 @@ export function ListOfProducts() {
       {filteredProducts ? (
         filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <div key={product.id} className={styles.product}>
+            <div key={product.image} className={styles.product}>
               <Link href={`/products/${product.id}`}>
                 <div className={styles.image_and_descrption}>
                   <SquareImage url={product.image} width={100} />

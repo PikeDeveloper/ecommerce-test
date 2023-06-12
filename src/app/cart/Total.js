@@ -5,9 +5,9 @@ export default function Total({ products }) {
   let total = 0;
   return (
     <div className={styles.total}>
-      {products.map((product) => {
+      {products.map((product, index) => {
         total += product.product.price * product.quantity;
-        return <p>{product.product.price * product.quantity} USD</p>;
+        return <p key={index} >{product.product.price * product.quantity} USD</p>;
       })}
 
       <h4>Total {total.toFixed(2)} USD </h4>

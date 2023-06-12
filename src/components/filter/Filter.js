@@ -31,8 +31,14 @@ export default function Filter(product) {
 
   const priceSelecter = (e) => {
     const price = e.target.name.split("-");
-    setMinPrice((pr) => price[0] - pr * 0);
-    setMaxPrice((pr) => price[1] - pr * 0);
+    setMinPrice((pr) => price[0]);
+    setMaxPrice((pr) => price[1]);
+    filterProducts();
+  };
+
+  const setAnyPrice = () => {
+    setMinPrice(0);
+    setMaxPrice(1000000);
     filterProducts();
   };
 
@@ -41,15 +47,20 @@ export default function Filter(product) {
       <p>Categoría:</p>
       <select className={styles.select} onClick={categoriSelecter}>
         {categories.map((category, index) => (
-          <option value={category}>{category}</option>
+          <option key={index} value={category}>{category}</option>
         ))}
       </select>
       <br />
       <br />
 
       <p>Precio:</p>
+
+      <button onClick={setAnyPrice} className={styles.price}>
+        Cualquier precio
+      </button>
+
       {prices.map((price, index) => (
-        <button onClick={priceSelecter} name={price} className={styles.price}>
+        <button key={index} onClick={priceSelecter} name={price} className={styles.price}>
           {price}
         </button>
       ))}
