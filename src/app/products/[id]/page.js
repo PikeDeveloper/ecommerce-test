@@ -2,6 +2,7 @@ import StarRating from "@/components/stars_rating/stars";
 import styles from "./product.module.css";
 import AddedToCart from "@/components/add_to_cart/AddToCart";
 import { apiii } from "../../../utils/constants.js";
+import SquareImage from "@/components/square_image/SquareImage";
 
 const fetchSinglePost = (id) => {
   return fetch(`${apiii}${id}`, {
@@ -15,13 +16,7 @@ export default async function Post({ params }) {
   return (
     <div className={styles.container}>
       <div className={styles.image_and_descrption}>
-        <img
-          width={300}
-          height={300}
-          src={post.image}
-          alt={post.title}
-          className={styles.image}
-        />
+        <SquareImage url={post.image} width={200} />
         <div className={styles.text}>
           <h3 className={styles.title}>{post.title}</h3>
           <StarRating stars={post.rating.rate} count={post.rating.count} />
@@ -29,7 +24,6 @@ export default async function Post({ params }) {
           <p>{post.description}</p>
           <br />
           <br />
-
           <AddedToCart product={post} />
         </div>
       </div>

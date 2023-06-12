@@ -37,9 +37,8 @@ export default function Login() {
           placeholder="Contraseña"
           onChange={handleChange}
         />
-        <div className="login-and-no-acount">
-          <button className={styles.loginButton}>Login</button>
-        </div>
+
+        <button className={styles.loginButton}>Login</button>
       </form>
       <LoginGoogle />
     </div>

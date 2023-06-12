@@ -15,8 +15,8 @@ export const useProducts = () => {
   return constext;
 };
 
-
 export function ProductsProvider({ children }) {
+  const [globalUser, setGlobalUser] = useState({ name: "" });
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -27,8 +27,7 @@ export function ProductsProvider({ children }) {
 
   //obtiene todos los productos de la api
   const getProducts = async () => {
-    console.log(" api pedida ");
-    console.log(apiii);
+   
     await fetch(apiii)
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
@@ -99,6 +98,7 @@ export function ProductsProvider({ children }) {
   return (
     <ProductsContext.Provider
       value={{
+        globalUser,
         allProducts,
         productsInCart,
         category,
@@ -106,6 +106,7 @@ export function ProductsProvider({ children }) {
         maxPrice,
         filteredProducts,
         setCategory,
+        setGlobalUser,
         getProducts,
         addProductToCart,
         deleteProductInCart,

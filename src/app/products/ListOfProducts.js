@@ -23,6 +23,7 @@ export function ListOfProducts() {
         filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.image} className={styles.product}>
+                 <LikeButton product={product} />
               <Link href={`/products/${product.id}`}>
                 <div className={styles.image_and_descrption}>
                   <SquareImage url={product.image} width={100} />
@@ -36,8 +37,9 @@ export function ListOfProducts() {
                   </div>
                 </div>
               </Link>
+
               <AddToCart product={product} />
-              <LikeButton product={product} />
+           
             </div>
           ))
         ) : (

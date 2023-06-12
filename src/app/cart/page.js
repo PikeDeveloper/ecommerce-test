@@ -3,7 +3,7 @@ import { useProducts } from "../../context/ProductsContext";
 import styles from "./products.module.css";
 import Link from "next/link";
 import DescriptioAndPrice from "./DescriptioAndPrice.js";
-import CustomImage from "./CustomImage";
+import SquareImage from "@/components/square_image/SquareImage";
 import Total from "./Total";
 import EmptyCart from "./EmptyCart";
 
@@ -27,7 +27,7 @@ export default function ShoppingCart() {
                   href={`/products/${product.product.id}`}
                   className={styles.link}
                 >
-                  <CustomImage image={product.product.image} />
+                  <SquareImage url={product.product.image} width={100} />
                   <DescriptioAndPrice product={product} />
                 </Link>
                 <div

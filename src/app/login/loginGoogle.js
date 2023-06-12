@@ -2,17 +2,25 @@
 import styles from "./login.module.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
+import { idGoogleOAUth } from "../../utils/constants.js";
+import { useProducts } from "../../context/ProductsContext.js";
+import decodeJwt from "@/utils/decodeJwt";
 
 export default function LoginGoogle() {
-  const handleOnSuccess = (googleUser) => {
-    console.log("Login success: currentUser:", googleUser.profileObj);
+  const { setGlobalUser } = useProducts();
+
+  const handleOnSuccess = (credentialREsponse) => {
+    const { payload } = decodeJwt(credentialREsponse.credential);
+    setGlobalUser({ name: payload.name });
+   // window.location.href = "/login";
+   
   };
 
   const handleError = (result) => {
     console.log("Login failed: result:", result);
   };
   return (
-    <GoogleOAuthProvider clientId="579572444628-nak0v6sq3ocqmb4g6r2ff5r607mpc6qt.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={idGoogleOAUth}>
       <main>
         <div className={styles.googleLogin}>
           <GoogleLogin onError={handleError} onSuccess={handleOnSuccess} />

@@ -16,7 +16,9 @@ export default function Navigation() {
       <nav>
         <ul className={styles.nav}>
           {links.map(({ label, route }, index) => (
-            <Link key={index} className={styles.item} href={route}>{label}</Link>
+            <Link key={index} className={styles.item} href={route}>
+              {label}
+            </Link>
           ))}
         </ul>
       </nav>
