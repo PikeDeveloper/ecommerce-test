@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./Navigation.module.css";
 import ShoppingCart from "./shopping_cart/ShoppingCart";
+import SearchBar from "./search_bar/Search-bar";
 
 //Links de navegacion entre paginas
 const links = [
@@ -22,6 +23,7 @@ export default function Navigation() {
           ))}
         </ul>
       </nav>
+      <SearchBar />
       <ShoppingCart />
     </header>
   );

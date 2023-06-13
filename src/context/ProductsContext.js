@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 import { apiii } from "../utils/constants.js";
 
+import { products } from "../utils/constants.js";
 export const ProductsContext = createContext();
 
 export const useProducts = () => {
@@ -19,6 +20,7 @@ export function ProductsProvider({ children }) {
   const [globalUser, setGlobalUser] = useState({ name: "" });
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchWord, setSearchWord] = useState("");
 
   const [productsInCart, setProductsInCart] = useState([]);
   const [category, setCategory] = useState("All");
@@ -27,19 +29,21 @@ export function ProductsProvider({ children }) {
 
   //obtiene todos los productos de la api
   const getProducts = async () => {
-   
+    setAllProducts(products);
+    products;
+
+    /*
     await fetch(apiii)
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
-
-    setMinPrice((pre) => pre * 0);
     filterProducts();
+*/
   };
 
   //actualiza los productos filtrados cada vez que cambia el filtro
   useEffect(() => {
     filterProducts();
-  }, [category, minPrice, maxPrice]);
+  }, [category, minPrice, maxPrice,searchWord]);
 
   //obtiene los productos al cargar la pagina
   useEffect(() => {
@@ -54,7 +58,9 @@ export function ProductsProvider({ children }) {
       if (
         (product.category === category || category == "All") &&
         product.price >= minPrice &&
-        product.price <= maxPrice
+        product.price <= maxPrice &&
+        (product.title.toLowerCase().includes(searchWord.toLowerCase()) ||
+          product.description.toLowerCase().includes(searchWord.toLowerCase()))
       ) {
         temporalProducts.push(product);
       }
@@ -113,6 +119,7 @@ export function ProductsProvider({ children }) {
         filterProducts,
         setMinPrice,
         setMaxPrice,
+        setSearchWord,
       }}
     >
       {children}

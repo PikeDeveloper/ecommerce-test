@@ -7,7 +7,6 @@ import { LikeButton } from "./LikeButton";
 import styles from "./products.module.css";
 import SquareImage from "@/components/square_image/SquareImage";
 
-
 export function ListOfProducts() {
   const { filteredProducts, filterProducts } = useProducts();
 
@@ -20,10 +19,10 @@ export function ListOfProducts() {
 
     <div className={styles.mainContainer}>
       {filteredProducts ? (
-        filteredProducts.length > 0 ? (
+        filteredProducts.length >= 1 ? (
           filteredProducts.map((product) => (
             <div key={product.image} className={styles.product}>
-                 <LikeButton product={product} />
+              <LikeButton product={product} />
               <Link href={`/products/${product.id}`}>
                 <div className={styles.image_and_descrption}>
                   <SquareImage url={product.image} width={100} />
@@ -37,9 +36,7 @@ export function ListOfProducts() {
                   </div>
                 </div>
               </Link>
-
               <AddToCart product={product} />
-           
             </div>
           ))
         ) : (

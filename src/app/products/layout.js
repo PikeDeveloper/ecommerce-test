@@ -7,7 +7,6 @@ export default function PostLayout({ children }) {
     <div className={styles.layout}>
       <Filter />
       {children}
-
     </div>
   );
 }
