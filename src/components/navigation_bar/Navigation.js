@@ -29,8 +29,6 @@ export default function Navigation() {
         </ul>
       </nav>
 
-      
-
       <ShoppingCart />
     </header>
   );

@@ -4,6 +4,7 @@ import CustomImage from "@/components/custom_image/CustomImage";
 import { Montserrat } from "@next/font/google";
 import CategoriesCard from "./home/categoriesCard";
 import MainProducts from "./home/main_products";
+import Map from "./home/map";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
 
         <CategoriesCard />
         <MainProducts />
+        <Map />
       
       </div>
     </main>

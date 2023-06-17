@@ -37,11 +37,10 @@
   flex-direction: column;
 }
 
-
-
 .text {
   margin: 0px auto;
 }
+
 .title {
   font-size: 18px;
   overflow: hidden;
@@ -116,12 +115,11 @@
 
 .total {
   padding: 20px;
-  font-size:18px;
+  font-size: 18px;
   position: fixed;
   right: 70px;
   top: 100px;
   text-align: right;
-  border: 1px solid #4e4d6720;  
+  border: 1px solid #4e4d6720;
   border-radius: 10px;
-
 }

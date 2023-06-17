@@ -1,16 +1,19 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   background-color: #333;
   color: #fff;
-  padding: 15px;
   height: 80px;
   align-items: center;
+  justify-content: right;
 }
 
 .nav {
   display: flex;
   flex-direction: row;
+  margin-left: auto;
+  margin-right: 15px;
 }
 
 .item {
@@ -19,6 +22,6 @@
 }
 
 .logo {
-  margin-left: 15px;
+  margin-left: 50px;
   margin-right: auto;
 }

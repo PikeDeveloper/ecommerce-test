@@ -1,11 +1,11 @@
 .mainContainer {
-
   display: flex;
   flex-direction: row;
   text-align: right;
   justify-content: center;
   align-items: center;
-  margin: -5px 10px 0 auto;
+  margin: -5px 40px 0 auto;
+  border-radius: 10px;
 }
 
 .item_cart_counter {
@@ -29,14 +29,9 @@
   display: flex;
 }
 
-.globalUser {
-  margin-right: 10px;
-}
-
-.makeImageCircular{
- 
+.makeImageCircular {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin: 0 10px -20px 0;
+  margin: 0 30px -20px 0;
 }
