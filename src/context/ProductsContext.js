@@ -1,10 +1,8 @@
 "use client";
-
 import { createContext, useContext, useEffect, useState } from "react";
-
 import { apiii } from "../utils/constants.js";
 
-import { products } from "../utils/constants.js";
+// import { products } from "../utils/constants.js";
 export const ProductsContext = createContext();
 
 export const useProducts = () => {
@@ -17,11 +15,14 @@ export const useProducts = () => {
 };
 
 export function ProductsProvider({ children }) {
-  const [globalUser, setGlobalUser] = useState({ name: "" });
+  const [globalUser, setGlobalUser] = useState({
+    name: "",
+    email: "",
+    profilePictureURL: "",
+  });
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [searchWord, setSearchWord] = useState("");
-
+  const [searchWord, setSearchWord] = useState(" ");
   const [productsInCart, setProductsInCart] = useState([]);
   const [category, setCategory] = useState("All");
   const [minPrice, setMinPrice] = useState(0);
@@ -29,21 +30,30 @@ export function ProductsProvider({ children }) {
 
   //obtiene todos los productos de la api
   const getProducts = async () => {
-    setAllProducts(products);
-    products;
-
-    /*
+    console.log(allProducts);
     await fetch(apiii)
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
     filterProducts();
-*/
+    console.log(allProducts);
   };
 
-  //actualiza los productos filtrados cada vez que cambia el filtro
+  //actualiza los productos filtrados cada vez que cambia el filtro o la busqueda
   useEffect(() => {
     filterProducts();
-  }, [category, minPrice, maxPrice,searchWord]);
+  }, [category, minPrice, maxPrice, searchWord]);
+
+  //obtiene los productos del carrito del localStorage al cargar la pagina
+  useEffect(() => {
+    const productsOnLocalAtorage =
+      JSON.parse(localStorage.getItem("productsInCart")) ?? [];
+    setProductsInCart(productsOnLocalAtorage);
+  }, []);
+
+  //actualiza los productos en el carrito en el localStorage cada vez que cambia
+  useEffect(() => {
+    localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
+  }, [productsInCart]);
 
   //obtiene los productos al cargar la pagina
   useEffect(() => {
@@ -53,7 +63,6 @@ export function ProductsProvider({ children }) {
   //filtro de productos por categoria y precio
   const filterProducts = () => {
     let temporalProducts = [];
-
     allProducts.map((product) => {
       if (
         (product.category === category || category == "All") &&

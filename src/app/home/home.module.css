@@ -1,0 +1,92 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  width: 100vw;
+}
+
+.titleSection {
+  font-size: 41px;
+  font-weight: 700;
+  color: #b8b8b8;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+/* Category ------------------------------------------- */
+.card {
+  margin: 10px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.line {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.categoryName {
+  font-size: 30px;
+  font-weight: 700;
+  color: #b8b8b8;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+/* Main products ------------------------------------------- */
+.productCard {
+  padding: 30px;
+  margin: 10px;
+  width: 308px;
+  height: 166px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #e6e6e6;
+  border-radius: 7px;
+  background: #d9d9d9;
+  cursor: pointer;
+}
+
+.productTitleAndDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.productTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #737373;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+.productDescription {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a1a1a1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}

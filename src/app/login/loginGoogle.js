@@ -11,9 +11,13 @@ export default function LoginGoogle() {
 
   const handleOnSuccess = (credentialREsponse) => {
     const { payload } = decodeJwt(credentialREsponse.credential);
-    setGlobalUser({ name: payload.name });
-   // window.location.href = "/login";
-   
+    setGlobalUser({
+      name: payload.name,
+      email: payload.email,
+      profilePictureURL: payload.picture,
+    });
+    console.log(payload);
+    // window.location.href = "/login";
   };
 
   const handleError = (result) => {

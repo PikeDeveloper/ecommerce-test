@@ -1,4 +1,5 @@
 .mainContainer {
+
   display: flex;
   flex-direction: row;
   text-align: right;
@@ -14,18 +15,28 @@
 }
 
 .number {
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   color: rgb(240, 136, 4);
 }
 
 .image {
   position: absolute;
-  margin-top: 5px;
+
   display: flex;
 }
 
 .globalUser {
   margin-right: 10px;
+}
+
+.makeImageCircular{
+ 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px -20px 0;
 }

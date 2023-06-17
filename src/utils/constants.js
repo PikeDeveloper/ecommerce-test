@@ -1,4 +1,7 @@
+//export const apiii = "localhost:8000/products/";
 export const apiii = "https://fakestoreapi.com/products/";
+
+export const categories = ["01", "02", "03", "04", "05"];
 
 export const idGoogleOAUth =
   "579572444628-nak0v6sq3ocqmb4g6r2ff5r607mpc6qt.apps.googleusercontent.com";
